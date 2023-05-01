@@ -1,0 +1,25 @@
+.App {
+    --header_height: 60px;
+    max-width: 1200px;
+    min-height: 336px;
+    margin: 0 auto;
+}
+
+.hw {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px;
+}
+
+.hwTitle {
+    align-self: flex-start;
+    padding: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+}
