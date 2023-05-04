@@ -50,7 +50,7 @@ export const friendMessage0: MessageType = {
         name: 'Angela', // можно менять
     },
     message: {
-        text: 'Hi. I\'m fine! The weather is wonderful today) You maybe wanna go to walk?', // можно менять
+        text: 'Hi. I\'m fine! The weather is wonderful today) Do you maybe wanna take a walk?', // можно менять
         time: '21:55', // можно менять
     },
 }
