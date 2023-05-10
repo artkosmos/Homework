@@ -30,8 +30,8 @@ export const pureOnBlur = (name: string, setError: React.Dispatch<React.SetState
   }
 }
 
-export const pureOnEnter = (event: KeyboardEvent<HTMLInputElement>, addUser: () => void) => {
-  if (event.key === 'Enter') {
+export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => void) => {
+  if (e.key === 'Enter') {
     addUser()
   }// если нажата кнопка Enter - добавить
 }
@@ -46,9 +46,9 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
   const [name, setName] = useState<string>('')
   const [error, setError] = useState<string>('')
 
-  const setNameCallback = (name: string) => {
-    setName(name)
-    error && setError('')
+  const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+    setName(e.currentTarget.value)
+    error && setError('')  // если error существует то выполняется код справа
   }
   const addUser = () => {
     pureAddUser(name, setError, setName, addUserCallback)
@@ -62,8 +62,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     pureOnEnter(e, addUser)
   }
 
-  const totalUsers = 0 // need to fix
-  const lastUserName = 'some name' // need to fix
+  const totalUsers = users.length
+  const lastUserName = users[users.length - 1]?.name // ? - если значение существует, то оно возьмет name
 
   return (
     <Greeting

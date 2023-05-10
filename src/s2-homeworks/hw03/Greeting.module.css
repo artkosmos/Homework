@@ -1,7 +1,11 @@
 .greetingForm {
+  display: flex;
+  flex-direction: column;
 }
 
 .inputAndButtonContainer {
+  display: flex;
+  gap: 15px;
 }
 
 .error {
@@ -17,6 +21,16 @@
 }
 
 .button {
+  width: 78px;
+  height: 36px;
+  background: #0066CC;
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
 }
 
 .button:focus {
