@@ -12,17 +12,17 @@ beforeEach(() => {
     error = ''
 })
 
-test.skip('name 1', () => {
+test('name 1', () => {
     name = '1'
     pureOnBlur(name, setError)
     expect(error).toBe('')
 })
-test.skip('name 2', () => {
+test('name 2', () => {
     name = ''
     pureOnBlur(name, setError)
     expect(error).toBe('Ошибка! Введите имя!')
 })
-test.skip('name 3', () => {
+test('name 3', () => {
     name = '    '
     pureOnBlur(name, setError)
     expect(error).toBe('Ошибка! Введите имя!')
