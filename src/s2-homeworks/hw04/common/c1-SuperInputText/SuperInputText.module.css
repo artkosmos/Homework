@@ -5,16 +5,25 @@
 }
 
 .inputWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
 }
 
 .superInput {
 }
 
 .errorInput {
+  border-color: #CC0000;
+  box-shadow: inset 0 0 5px 1px rgba(204,0,0,0.5);
 }
 
 .errorInput:focus {
+  outline: 1px solid #CC0000FF;
+  border-color: #CC0000;
+  box-shadow: inset 0 0 5px 1px rgba(204,0,0,0.5);
 }
 
 .error {
+  color: red;
 }
