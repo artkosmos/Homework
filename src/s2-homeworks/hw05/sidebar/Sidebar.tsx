@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
 import closeIcon from './closeOutline.svg'
+import {OverLay} from "../overlay/OverLay";
 
 type PropsType = {
     open: boolean
@@ -14,7 +15,8 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     return (
         <>
             {/*затемнение справа от открытого меню*/}
-            {open && <div className={`${s.background} ${s.visible}`} onClick={handleClose}/>}
+            {/*{open && <div className={`${s.background}`} onClick={handleClose}/>}*/}
+            {open && <OverLay callBack={handleClose}/>}
 
             <aside className={sidebarClass}>
                 <button className={s.close} onClick={handleClose}>

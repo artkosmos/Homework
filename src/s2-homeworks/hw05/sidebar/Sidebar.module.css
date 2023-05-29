@@ -25,14 +25,15 @@
   top: 0;
   left: 0;
   bottom: 0;
-  right: 0;
+  right: -20px;
   z-index: 2;
   opacity: 0;
-  visibility: visible;
-  transition: opacity 2s;
+  visibility: hidden;
+  transition: all 500ms;
 }
 
 .background.visible {
+  visibility: visible;
   opacity: 0.5;
 }
 
