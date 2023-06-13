@@ -43,7 +43,6 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 
     const mappedOptions: any[] = options
         ? options.map((o) => {
-        console.log(value, o.id)
         return (
           <label key={name + '-' + o.id} className={s.label}>
             <input
