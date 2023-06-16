@@ -16,6 +16,7 @@ beforeEach(() => {
 })
 
 test('sort name up', () => {
+    debugger
     const newState = homeWorkReducer(initialState, {
         type: 'sort',
         payload: 'up',
