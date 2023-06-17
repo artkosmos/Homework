@@ -1,9 +1,14 @@
 .item {
   padding-left: 20px;
   height: 48px;
+
+}
+.item td {
+  border-bottom: 1px solid #E5E5E5;;
 }
 
-.item:last-of-type {
+.item:last-of-type td {
+  border: none;
 }
 
 .users {

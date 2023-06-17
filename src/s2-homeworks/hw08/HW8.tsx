@@ -43,7 +43,7 @@ const HW8 = () => {
     const sortDown = () => {
         setPeople(
             homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'})
-        ) // в обратном порядке a.name < b.name}
+        ) // в обратном порядке a.name < b.name
         setCurrentSort('down')
     }
     const check18 = () => {
@@ -82,7 +82,7 @@ const HW8 = () => {
                         </SuperButton>
                     </div>
 
-                    <table id={'hw8-users'} className={s.users}>
+                    <table id={'hw8-users'} className={s.users}  cellSpacing="0">
                         <thead className={s.thead}>
                         <tr>
                             <td className={s.nameCol}>Name</td>
