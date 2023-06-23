@@ -10,11 +10,17 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
+        const timerId = +setInterval(() => setDate(new Date()), 1000)
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
+      setTimerId(timerId)
     }
 
     const stop = () => {
+      if (timerId) {
+        clearInterval(timerId)
+        setTimerId(undefined)
+      }
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
@@ -23,17 +29,24 @@ function Clock() {
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
         setShow(false)
     }
+    // const stringTime = `${date.getHours().toString().padStart(2,'0')}:${date.getMinutes().toString().padStart(2,'0')}:${date.getSeconds().toString().padStart(2,'0')}`
+    //
+    // const timeFormatter = new Intl.DateTimeFormat('ru', {hour: "2-digit", minute: "2-digit", second: "2-digit"})
+    // const dateFormatter = new Intl.DateTimeFormat('ru', {day: "2-digit", month: "2-digit", year: "numeric"})
+    // const monthFormatter = new Intl.DateTimeFormat('en-US', {month: "long"})
+    // const dayFormatter = new Intl.DateTimeFormat('en-US', {weekday: "long"})
+    //
+    // const stringTime = timeFormatter.format(date) // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    // const stringDate = dateFormatter.format(date) // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    // // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
+    // const stringDay = dayFormatter.format(date) // пишут студенты
+    // const stringMonth = monthFormatter.format(date) // пишут студенты
 
-    const timeFormatter = new Intl.DateTimeFormat('ru', {hour: "2-digit", minute: "2-digit", second: "2-digit"})
-    const dateFormatter = new Intl.DateTimeFormat('ru', {day: "2-digit", month: "2-digit", year: "numeric"})
-    const monthFormatter = new Intl.DateTimeFormat('en-US', {month: "long"})
-    const dayFormatter = new Intl.DateTimeFormat('en-US', {weekday: "long"})
+  const stringTime = date.toLocaleTimeString('ru-Ru') || <br/>
+  const stringDate = date.toLocaleDateString('ru-Ru')|| <br/>
 
-    const stringTime = timeFormatter.format(date) // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = dateFormatter.format(date) // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
-    // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = dayFormatter.format(date) // пишут студенты
-    const stringMonth = monthFormatter.format(date) // пишут студенты
+  const stringDay = new Intl.DateTimeFormat('en-Us', {weekday: "long"}).format(date) || <br/>
+  const stringMonth = new Intl.DateTimeFormat('en-Us', {month: "long"}).format(date) || <br/>
 
     return (
         <div className={s.clock}>
