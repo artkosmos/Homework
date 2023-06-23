@@ -10,9 +10,9 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
-        const timerId = +setInterval(() => setDate(new Date()), 1000)
-        // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
-        // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
+      // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
+      // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
+      const timerId = +setInterval(() => setDate(new Date()), 1000)
       setTimerId(timerId)
     }
 
