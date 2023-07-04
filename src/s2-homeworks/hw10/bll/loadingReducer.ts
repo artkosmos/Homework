@@ -1,3 +1,8 @@
+
+type InitStateType = {
+    isLoading: boolean
+}
+
 const initState = {
     isLoading: false,
 }
