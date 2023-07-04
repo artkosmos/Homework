@@ -10,7 +10,7 @@ const initState = {
 export const loadingReducer = (state = initState, action: LoadingActionType): LoadingType => { // fix any
     switch (action.type) {
         case "CHANGE_LOADING":
-            return {...state, isLoading: state.isLoading}
+            return {...state, isLoading: action.isLoading}
         default:
             return state
     }
