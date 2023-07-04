@@ -1,5 +1,11 @@
 .loader {
-    /*свг и/или анимация*/
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    animation-name: loaderAnimation;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    margin-left: 40px;
 }
 
 .button {
@@ -14,4 +20,22 @@
 
 .button:hover {
     width: 120px;
+}
+
+@keyframes loaderAnimation {
+    0% {
+        background-image: url("./loading_1.png");
+    }
+    25% {
+        background-image: url("./loading_2.png");
+    }
+    50% {
+        background-image: url("./loading_3.png");
+    }
+    75% {
+        background-image: url("./loading_4.png");
+    }
+    100% {
+        background-image: url("./loading_1.png");
+    }
 }
